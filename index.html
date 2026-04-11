@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login / Register</title>
+<style>
+body{
+    font-family: 'Times New Roman', sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #007BFF;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h1{ 
+text-align: center;
+color: blue;
+}
+
+h2{
+    text-align: center;
+}
+
+input, select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-link{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+form{
+    display: none;
+}
+
+form.active {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Login Form -->
+    <form id="loginForm" class="active" method="POST">
+	  <h1><i>Hello! Welcome</i></h1>
+        <h2>Login</h2>
+        <label>Email / Username</label>
+        <input type="text" placeholder="Enter email or username" required>
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+        <button type="submit">Login</button>
+        <span class="toggle-link" onclick="toggleForms()">Don't have an account? Register</span>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" method="POST">
+      <h1><i>Welcome Back</i></h1>
+        <h2>Register</h2>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter full name" required>
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" required>
+        <label>Password</label>
+        <input type="password" placeholder="Create password" required>
+        <label>Role</label>
+        <select>
+            <option>Student</option>
+            <option>Lecturer</option>
+        </select>
+        <button type="submit">Register</button>
+        <span class="toggle-link" onclick="toggleForms()">Already have an account? Login</span>
+    </form>
+
+</div>
+
+<script>
+function toggleForms() {
+    document.getElementById('loginForm').classList.toggle('active');
+    document.getElementById('registerForm').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
